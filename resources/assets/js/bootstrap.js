@@ -37,8 +37,8 @@ Vue.http.interceptors.push((request, next) => {
  * allows your team to easily build robust real-time web applications.
  */
 
-
 require("flatpickr");
+var moment = require("moment");
 
 $('#select-tab a').click(function (e) {
     e.preventDefault();
@@ -52,10 +52,12 @@ $(".flatpickr").flatpickr({
     inline: true,
     clickOpens: false,
     time_24hr: true,
-    minDate: new Date(),
+    minDate: 'today',
+    defaultDate: moment.utc().format(),
     utc: true,
-    shorthandCurrentMonth: true
+    shorthandCurrentMonth: true,
 });
+
 
 
 Vue.filter('two_digits', function (value) {

@@ -68,7 +68,7 @@ class TimerController extends Controller
 
         $id = Hashids::encode($time->id);
 
-        return redirect()->route('timer.show', $id);
+        return redirect()->route('c.show', $id);
     }
 
 

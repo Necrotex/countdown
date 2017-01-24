@@ -21,7 +21,7 @@
 
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active fade in" id="countdowntime">
-                <form class="form-inline timepicker-form" method="post" action="{{route('timer.store')}}">
+                <form class="form-inline timepicker-form" method="post" action="{{route('c.store')}}">
                     {{ csrf_field() }}
 
                     <div class="form-group timepicker-group">
@@ -48,15 +48,15 @@
                 </form>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="date">
-                <form method="post" action="{{route('timer.store')}}" novalidate>
+                <form method="post" action="{{route('c.store')}}" novalidate>
                     {{ csrf_field() }}
 
                     <input class="flatpickr" name="datetime" type="text" required="required">
+                    <small class="center-block text-center text-muted" style="margin-top: 10px;">All times in UTC</small>
 
                     <input class="btn btn-default btn-block submit" type="submit" value="Submit">
                 </form>
             </div>
         </div>
-
     </div>
 @endsection

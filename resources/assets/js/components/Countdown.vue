@@ -20,25 +20,25 @@
 </template>
 
 <script>
+    var moment = require('moment');
+
     export default {
         mounted() {
             window.setInterval(() => {
-                this.now = Math.trunc((new Date()).getTime() / 1000);
+                this.now = moment.utc().format('X');
             },1000);
-
-            console.log(this.timestamp);
         },
 
         props : {
             date : {
-                coerce: str => Math.trunc(Date.parse(str) / 1000)
+                coerce: str => moment.utc(this.date).format('X')
             }
         },
 
         data() {
             return {
-                now: Math.trunc((new Date()).getTime() / 1000),
-                timestamp: Math.trunc(Date.parse(this.date) / 1000)
+                now: moment.utc().format('X'),
+                timestamp: moment.utc(this.date).format('X')
             }
         },
 

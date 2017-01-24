@@ -12,4 +12,4 @@
 */
 
 Route::get('/', ['as' => 'home', 'uses' => 'TimerController@index']);
-Route::resource('timer', 'TimerController');
+Route::resource('c', 'TimerController');
